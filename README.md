@@ -1,5 +1,6 @@
 # Kafka Producer Example
 This is a single threaded Kafka producer that will show the usage of best practice parameters for minimizing data loss. Also shows the usage of onCompletion when working with the default AsyncProducer
+
 ##Properties
 * props.put("acks", "all");
 	* Waits for in sync replicas to reply
