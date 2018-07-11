@@ -202,7 +202,7 @@ public class KafkaProducerSample {
 		//startConsoleReport();
 	    
 		kps.runSample(topic,server,	new Integer(batchSize), new Integer(numIterations), new Integer(recordSize),
-				new Integer(buffMem), new Boolean(async),  new Integer(args[9]) );
+				new Integer(buffMem), new Boolean(async),  new Integer(args[8]) );
 
 	}
 

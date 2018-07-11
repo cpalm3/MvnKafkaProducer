@@ -1,17 +1,17 @@
-2018-05-10 14:03:37 INFO  KafkaProducerSample:53 - runSample 3000
-2018-05-10 14:03:37 INFO  ProducerConfig:180 - ProducerConfig values: 
+2018-07-11 14:25:44 INFO  KafkaProducerSample:53 - runSample 31
+2018-07-11 14:25:44 INFO  ProducerConfig:180 - ProducerConfig values: 
 	acks = all
-	batch.size = 10
+	batch.size = 3
 	block.on.buffer.full = false
 	bootstrap.servers = [localhost:9092]
-	buffer.memory = 10000
+	buffer.memory = 1000
 	client.id = 
 	compression.type = none
 	connections.max.idle.ms = 540000
 	interceptor.classes = null
 	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
 	linger.ms = 1
-	max.block.ms = 60000
+	max.block.ms = 30
 	max.in.flight.requests.per.connection = 1
 	max.request.size = 1048576
 	metadata.fetch.timeout.ms = 60000
@@ -52,8 +52,11 @@
 	timeout.ms = 30000
 	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
 
-2018-05-10 14:03:37 INFO  AppInfoParser:83 - Kafka version : 0.10.2.0
-2018-05-10 14:03:37 INFO  AppInfoParser:84 - Kafka commitId : 576d93a8dc0cf421
-2018-05-10 14:03:37 INFO  KafkaProducerSample:98 - ASycn producer
-2018-05-10 14:03:40 INFO  KafkaProducerSample:180 - Closing Producer
-2018-05-10 14:03:40 INFO  KafkaProducer:689 - Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2018-07-11 14:25:44 INFO  AppInfoParser:83 - Kafka version : 0.10.2.0
+2018-07-11 14:25:44 INFO  AppInfoParser:84 - Kafka commitId : 576d93a8dc0cf421
+2018-07-11 14:25:44 INFO  KafkaProducerSample:98 - ASycn producer
+2018-07-11 14:25:44 ERROR KafkaProducerSample:115 - Failed Record is 0 org.apache.kafka.common.errors.TimeoutException: Failed to update metadata after 30 ms.
+2018-07-11 14:25:45 ERROR KafkaProducerSample:115 - Failed Record is 1 org.apache.kafka.common.errors.TimeoutException: Failed to update metadata after 30 ms.
+2018-07-11 14:25:45 ERROR KafkaProducerSample:115 - Failed Record is 2 org.apache.kafka.common.errors.TimeoutException: Failed to update metadata after 30 ms.
+2018-07-11 14:25:45 INFO  KafkaProducerSample:180 - Closing Producer
+2018-07-11 14:25:45 INFO  KafkaProducer:689 - Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
