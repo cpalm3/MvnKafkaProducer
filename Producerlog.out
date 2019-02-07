@@ -1,29 +1,30 @@
-2018-07-11 14:25:44 INFO  KafkaProducerSample:53 - runSample 31
-2018-07-11 14:25:44 INFO  ProducerConfig:180 - ProducerConfig values: 
-	acks = all
-	batch.size = 3
-	block.on.buffer.full = false
+2019-02-05 22:59:59 INFO  KafkaProducerSample:56 - runSample 3000
+2019-02-05 22:59:59 INFO  ProducerConfig:279 - ProducerConfig values: 
+	acks = 1
+	batch.size = 10
 	bootstrap.servers = [localhost:9092]
-	buffer.memory = 1000
+	buffer.memory = 10000
 	client.id = 
 	compression.type = none
 	connections.max.idle.ms = 540000
-	interceptor.classes = null
+	enable.idempotence = false
+	interceptor.classes = []
 	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
 	linger.ms = 1
-	max.block.ms = 30
+	max.block.ms = 60000
 	max.in.flight.requests.per.connection = 1
 	max.request.size = 1048576
-	metadata.fetch.timeout.ms = 60000
 	metadata.max.age.ms = 300000
 	metric.reporters = []
 	metrics.num.samples = 2
+	metrics.recording.level = INFO
 	metrics.sample.window.ms = 30000
 	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
 	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
 	reconnect.backoff.ms = 50
 	request.timeout.ms = 60000
-	retries = 100
+	retries = 0
 	retry.backoff.ms = 100
 	sasl.jaas.config = null
 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
@@ -49,14 +50,19 @@
 	ssl.truststore.location = null
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
-	timeout.ms = 30000
+	transaction.timeout.ms = 60000
+	transactional.id = my-transactional-id
 	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
 
-2018-07-11 14:25:44 INFO  AppInfoParser:83 - Kafka version : 0.10.2.0
-2018-07-11 14:25:44 INFO  AppInfoParser:84 - Kafka commitId : 576d93a8dc0cf421
-2018-07-11 14:25:44 INFO  KafkaProducerSample:98 - ASycn producer
-2018-07-11 14:25:44 ERROR KafkaProducerSample:115 - Failed Record is 0 org.apache.kafka.common.errors.TimeoutException: Failed to update metadata after 30 ms.
-2018-07-11 14:25:45 ERROR KafkaProducerSample:115 - Failed Record is 1 org.apache.kafka.common.errors.TimeoutException: Failed to update metadata after 30 ms.
-2018-07-11 14:25:45 ERROR KafkaProducerSample:115 - Failed Record is 2 org.apache.kafka.common.errors.TimeoutException: Failed to update metadata after 30 ms.
-2018-07-11 14:25:45 INFO  KafkaProducerSample:180 - Closing Producer
-2018-07-11 14:25:45 INFO  KafkaProducer:689 - Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2019-02-05 23:00:00 INFO  KafkaProducer:486 - [Producer clientId=producer-1, transactionalId=my-transactional-id] Instantiated a transactional producer.
+2019-02-05 23:00:00 INFO  KafkaProducer:502 - [Producer clientId=producer-1, transactionalId=my-transactional-id] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+2019-02-05 23:00:00 INFO  KafkaProducer:528 - [Producer clientId=producer-1, transactionalId=my-transactional-id] Overriding the default acks to all since idempotence is enabled.
+2019-02-05 23:00:00 INFO  AppInfoParser:109 - Kafka version : 1.1.1
+2019-02-05 23:00:00 INFO  AppInfoParser:110 - Kafka commitId : 98b6346a977495f6
+2019-02-05 23:00:00 INFO  TransactionManager:372 - [Producer clientId=producer-1, transactionalId=my-transactional-id] ProducerId set to -1 with epoch -1
+2019-02-05 23:00:00 INFO  TransactionManager:372 - [Producer clientId=producer-1, transactionalId=my-transactional-id] ProducerId set to 4000 with epoch 9
+2019-02-05 23:00:00 INFO  KafkaProducerSample:97 - ASycn producer
+2019-02-05 23:00:00 INFO  Metadata:265 - Cluster ID: nQjZUUG4RGmRkoxhLfYORA
+2019-02-05 23:00:02 INFO  KafkaProducer:1054 - [Producer clientId=producer-1, transactionalId=my-transactional-id] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2019-02-05 23:00:02 INFO  KafkaProducerSample:185 - Closing Producer
+2019-02-05 23:00:02 INFO  KafkaProducer:1054 - [Producer clientId=producer-1, transactionalId=my-transactional-id] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.

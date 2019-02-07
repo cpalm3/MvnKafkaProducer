@@ -39,6 +39,6 @@ entity-type topics --entity-name TOPICNAME --add-config
 min.insync.replicas=2 unclean.leader.election.enable=false
 
 ## Running
-Usage: Topic, Server, batchSize, numIterations, metricsPollingRateInSeconds, recordSize in bytes, buffMem, isAsync, maxblockms
+Usage: Topic, Server, batchSize, numIterations, metricsPollingRateInSeconds, recordSize in bytes, buffMem, isAsync, maxblockms, isTransational
 
-java -jar target/KafkaProducerSample-0.0.1-SNAPSHOT.jar TOPIC BROKER:PORT,BROKER:PORT 10 3000 3 1000 10000 TRUE 60000
+java -jar target/KafkaProducerSample-0.0.1-SNAPSHOT.jar TOPIC BROKER:PORT,BROKER:PORT 10 3000 3 1000 10000 TRUE 60000 TRUE
